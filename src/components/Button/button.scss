@@ -1,0 +1,87 @@
+@import "../../styles/_vars";
+
+button {
+  padding: 16px 32px;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+  height: initial;
+  background: none;
+  color: $white;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  font-weight: 700;
+  svg {
+    fill: $white;
+    width: 24px;
+    margin-right: 16px;
+    height: 24px;
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  &.primary-btn {
+    background: $green;
+    &:hover{
+      background: darken($green, 6%)
+    }
+  }
+
+  &.secondary-btn {
+    border: 2px solid $white;
+    &:hover{
+      border-color: $green;
+      color: $green;
+    }
+  }
+
+  &.refresh-btn {
+    &:hover {
+      svg {
+        fill: $green;
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &.mailbox-btn {
+    border-bottom: 3px solid $white;
+    border-radius: 0;
+    margin-right: 24px;
+    opacity: 0.3;
+    position: relative;
+    max-height: 52px;
+    padding: 12px 6px;
+    &:after {
+      content: "";
+      height: 4px;
+      width: 0%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: $green;
+      transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    &.active {
+      border-color: $green;
+      color: $green;
+      opacity: 1;
+      svg {
+        fill: $green;
+      }
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+  &.trash-btn {
+    svg {
+      fill: $dark-grey;
+    }
+    &:hover {
+      svg {
+        fill: $red;
+      }
+    }
+  }
+}

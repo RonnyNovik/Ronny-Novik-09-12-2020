@@ -1,0 +1,40 @@
+@import "../../styles/_vars.scss";
+
+.login-page-wrapper {
+  width: 100vw;
+  height: 100vh;
+  @include flexDeadCenter .login-form-card {
+    height: 650px;
+    box-sizing: border-box;
+    width: 400px;
+    padding: 40px;
+    background: $light-grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+    > .error-text{
+      margin-bottom: 24px;
+    }
+    @include blackShadow;
+    .logo {
+      width: 200px;
+      display: block;
+    }
+    .button-wrapper {
+      margin-top: auto;
+      .primary-btn {
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .login-page-wrapper {
+    .login-form-card {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

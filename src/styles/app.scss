@@ -1,0 +1,18 @@
+@import "./_vars.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+body {
+  background: $dark-grey;
+  overflow: hidden;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  input,
+  button {
+    font-family: "Poppins", sans-serif;
+  }
+}
