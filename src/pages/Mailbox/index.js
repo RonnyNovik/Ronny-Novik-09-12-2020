@@ -17,6 +17,7 @@ const Mailbox = (props) => {
   const [activeMailbox, setActiveMailbox] = useState("received");
   const dispatch = useDispatch();
   const token = Token.getToken();
+
   useState(() => {
     if (!token || !userInfo.id) {
       props.history.push("/auth");
@@ -24,8 +25,10 @@ const Mailbox = (props) => {
   }, [token]);
 
   useEffect(() => {
-    dispatch(updateMessageList(userInfo.id, "received"));
-  }, []);
+    if (userInfo.id) {
+      dispatch(updateMessageList(userInfo.id, "received"));
+    }
+  }, [dispatch, userInfo.id]);
 
   const deletePromptHandler = (message_id) => {
     const accepted = window.confirm(

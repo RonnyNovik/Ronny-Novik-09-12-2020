@@ -10,7 +10,6 @@ const Message = (props) => {
     topic,
     created_at,
     content,
-    role,
     id,
     sender_name,
     recipient_name,

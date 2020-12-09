@@ -27,7 +27,7 @@ const Auth = (props) => {
   useEffect(() => {
     //reset store, recommended to be an action on its own
     dispatch(signUpSuccess());
-  }, []);
+  }, [dispatch]);
 
   const usernameValid =
     typeof ValidateUsername(userName) === "boolean" && userName.length

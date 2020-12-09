@@ -23,7 +23,7 @@ function* sendMessage({ data: { message, callback } }) {
 
 function* deleteMessage({ data: { user_id, message_id, type } }) {
   try {
-    const data = yield call(messageServices.deleteMessage, {
+    yield call(messageServices.deleteMessage, {
       user_id,
       message_id,
     });

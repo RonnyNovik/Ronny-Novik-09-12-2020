@@ -1,7 +1,7 @@
 import axios from "axios";
 import Token from "../utils/Token";
 const api = process.env.REACT_APP_API_URL;
-export default {
+const messageServices = {
   sendMessage: (payload) => {
     const token = Token.getToken();
     return axios.post(`${api}message/send`, payload, {
@@ -42,3 +42,5 @@ export default {
     });
   },
 };
+
+export default messageServices;

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Mailbox from "./Mailbox";
 import Auth from "./Auth";
 import { Switch, Route } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 const Routes = () => {
   return (
