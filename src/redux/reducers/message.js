@@ -1,8 +1,8 @@
 const initialState = {
   messageList: [],
   loadingList: false,
-  messageError: '',
-  listError: '',
+  messageError: "",
+  listError: "",
   loadingMessage: false,
 };
 
@@ -16,7 +16,7 @@ const messageReducer = (state = initialState, action) => {
         ...state,
         messageList: [...data.messages],
         loadingList: false,
-        listError: '',
+        listError: "",
       };
     case "REQUEST_SEND_MESSAGE":
       return {
@@ -26,7 +26,7 @@ const messageReducer = (state = initialState, action) => {
     case "SENT_MESSAGE_SUCCESS":
       return {
         ...state,
-        messageError: '',
+        messageError: "",
         loadingMessage: false,
       };
     case "REQUESTING_LIST":
@@ -46,6 +46,14 @@ const messageReducer = (state = initialState, action) => {
       return {
         ...state,
         messageError: data.error.response.data,
+        loadingMessage: false,
+      };
+    case "REQUEST_LOG_OUT":
+      return {
+        messageList: [],
+        loadingList: false,
+        messageError: "",
+        listError: "",
         loadingMessage: false,
       };
     default:

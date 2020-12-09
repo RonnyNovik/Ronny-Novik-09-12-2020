@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import UserMenu from "../../components/UserMenu";
 import Message from "../../components/Message";
+import Button from '../../components/Button';
 import { updateMessageList, deleteMessage } from "../../redux/actions/message";
+import { logOut } from "../../redux/actions/user";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../../components/Loader";
 import Logo from "../../assets/Logo.png";
 import Token from "../../utils/Token";
 import { withRouter } from "react-router-dom";
+import { Exit } from '../../utils/Icons'
 import "./mailbox.scss";
 
 const Mailbox = (props) => {
@@ -30,6 +33,12 @@ const Mailbox = (props) => {
     }
   }, [dispatch, userInfo.id]);
 
+  const logOutHandler = () => {
+    const { history } = props
+    dispatch(logOut());
+    history.push('/auth')
+
+  }
   const deletePromptHandler = (message_id) => {
     const accepted = window.confirm(
       "Are you sure you want to delete this message?"
@@ -47,6 +56,12 @@ const Mailbox = (props) => {
         <UserMenu
           activeMailbox={activeMailbox}
           setActiveMailbox={setActiveMailbox}
+        />
+        <Button
+          className={`exit-btn `}
+          onClick={() => logOutHandler()}
+          buttonText={'Logout'}
+          icon={Exit}
         />
         <div className={`label-row`}>
           <span className={`list-label topic`}>Topic</span>

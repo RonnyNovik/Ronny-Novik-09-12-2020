@@ -23,14 +23,21 @@ button {
   }
   &.primary-btn {
     background: $green;
-    &:hover{
-      background: darken($green, 6%)
+    &:hover {
+      background: darken($green, 6%);
     }
   }
-
+  &.exit-btn {
+    position: absolute;
+    right: 0;
+    top: 90px;
+    @media screen and (max-width: 414px) {
+      top: 30px;
+    }
+  }
   &.secondary-btn {
     border: 2px solid $white;
-    &:hover{
+    &:hover {
       border-color: $green;
       color: $green;
     }

@@ -37,6 +37,12 @@ const userReducer = (state = initialState, action) => {
         loadingAuth: false,
         authError: data.error.response.data,
       };
+    case "REQUEST_LOG_OUT":
+      return {
+        userInfo: {},
+        authError: "",
+        loadingAuth: false,
+      };
     default:
       return state;
   }
